@@ -2,14 +2,14 @@ import React from 'react';
 import {useParams} from 'react-router-dom'
 import {Header, ListPost} from '../Layout'
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import {AxiosClient} from '../Helper';
 
 const Category = () =>{
     const { id } = useParams()
     const [category, setCategory] = useState([])
 
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_API_HOST}/post/list_post?category_primary=${id}`)
+        AxiosClient.get(`/post/list_post?category_primary=${id}`)
         .then(res=>{
             const cate = res.data;
             setCategory(cate.data);
@@ -18,8 +18,11 @@ const Category = () =>{
      console.log(id);
     return (
         <div>
-            <Header/>
+            {category.length >0 && <Header/> }
             {category.length >0 && <ListPost data={category}/>}
+            {category.length == 0 && <div className="loading bg-light d-flex align-items-center justify-content-center">
+                <img src="/images/loading.svg" className="img-fluid"></img>
+            </div>}
         </div>
     )
 }
