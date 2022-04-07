@@ -152,3 +152,10 @@ ul li{
 .bg-gradient-green{
     background: linear-gradient(to right, rgb(12, 235, 235), rgb(32, 227, 178), rgb(41, 255, 198));
 }
+
+.sm-icon{
+    width: 20px;
+    height: 20px;
+    border-radius: 10%;
+    object-fit: cover;
+}

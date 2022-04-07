@@ -80,7 +80,7 @@ const ListPost = ({data}) => {
                 <ReactJkMusicPlayer
                     key={JSON.stringify(audioLists)}
                     className="background-none"
-                    autoPlay={false}
+                    autoPlay={true}
                     preload={true}
                     mode="full"
                     theme='light'

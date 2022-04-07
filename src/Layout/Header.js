@@ -4,6 +4,7 @@ import React from 'react';
 import { Container, Row, Navbar, Nav} from 'react-bootstrap';
 import { Link} from "react-router-dom";
 import {SearchOutlined} from '@ant-design/icons'
+import {CloudUploadOutlined} from '@ant-design/icons'
 
 const Header = () => {
 
@@ -46,6 +47,7 @@ const Header = () => {
                 <SearchOutlined className="icon-sm p-2 bg-dark text-white rounded" />
             </div>
         </div>
+        <Link to="/upload"><CloudUploadOutlined className="position-right-bottom icon" /></Link>
     </Container>
     )
     }else{

@@ -5,7 +5,7 @@ const loginUser = async ({username, password}) => {
     return AxiosClient.post('/login', {email:username, password:password })
 }
 
-export default function Login({setToken}) {
+export default function Login({setToken, setExpires}) {
 
 
     const [username, setUserName] = useState();
@@ -17,7 +17,9 @@ export default function Login({setToken}) {
             username,
             password
         });
-        setToken(data);
+        localStorage.setItem('auth',JSON.stringify(data))
+        setToken(data)
+        setExpires(data.expires_in*1000)
     }
   return(
     <div className='loading d-flex flex-wrap justify-content-center align-items-center p-4 bg-gradient-green'>

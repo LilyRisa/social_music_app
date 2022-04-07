@@ -13,3 +13,15 @@
 .font-weight-bold{
     font-weight: bold;
 }
+
+.position-top-left{
+    position: fixed;
+    top: 5%;
+    left: 5%;
+}
+
+.position-right-bottom{
+    position: fixed;
+    right: 5%;
+    bottom: 12%;
+}
